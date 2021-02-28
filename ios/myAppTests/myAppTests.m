@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface switeHeartTests : XCTestCase
+@interface myAppTests : XCTestCase
 
 @end
 
-@implementation switeHeartTests
+@implementation myAppTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {
