@@ -23,42 +23,19 @@ import {
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
+import axios from "axios";
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-
-// const App = () => {
-//   let num = 100;
-//   setInterval(()=>{
-//     num++
-//   },1000);
-
-//   return <View>
-//     <Text>{num}</Text>
-//   </View>
-// }
+import RootStore from "./mobx";
+import { Provider } from "mobx-react"
+import Btn from "./components/Btn"
 
 class App extends React.Component{
-  state = {
-    num:100
-  }
-  componentDidMount(){
-    alert("发送异步请求")
-  }
+ 
   render(){
-    // setTimeout(()=>{
-    //   this.setState({
-    //     num:this.state.num+1
-    //   })
-    // },1000)
     return <View>
-      <Text>{this.state.num}</Text>
+      <Provider RootStore={RootStore}>
+        <Btn></Btn>
+      </Provider>
     </View>
   }
 }
